@@ -10,8 +10,12 @@ class SearchPage extends Component {
 		query:'',
 		Books:[]
 	}
-/*This functions sets the Category/shelf on which each books belong[Default value is none].If it is added in myReads shelf 
-value will be same as the shelf in which it is added */
+
+	/*
+	* Sets the Category to which each books belong[Default value is set to none].
+	* If it is added in myReads shelf  value will be same as the shelf in which it is added
+	*/
+
 	setCategory = (books) =>{
 		for(let book of books)
 		{
@@ -25,10 +29,12 @@ value will be same as the shelf in which it is added */
       }
     }
 		return books
-		
+
 	}
-/*This function sets the state of query string to whatever is added ,searches the books and sets the state 
-	of Books array to the newly searched array*/
+	/*
+	*	 This function sets the query string passed to it.
+	*  Performs Searching and sets the state of the Books array to the newly searched array
+	*/
 	searchBooks = (event)=>{
 		let q = event.target.value;
 		this.setState({
@@ -39,7 +45,7 @@ value will be same as the shelf in which it is added */
 		{
 		this.setState({
 				Books:[]
-			})	
+			})
 		}
 		else {
 			book=this.setCategory(book)
@@ -66,9 +72,9 @@ value will be same as the shelf in which it is added */
               		<div className="book">
               			<div className="book-top">
 
-							<div className="book-cover" style={{ 
+							<div className="book-cover" style={{
 						      	width: 128,
-						      	height: 193, 
+						      	height: 193,
 						      	backgroundImage: `url(${book.imageLinks?book.imageLinks.thumbnail:placeholder})` }}>
 						     </div>
 						    <div className="book-shelf-changer">
