@@ -21,3 +21,4 @@
 -   `search`
 
 > P.S: Just wait for a second for the page to get loaded.
+> Demo.gif is added for your reference
