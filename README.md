@@ -8,8 +8,8 @@
 ## How to Run
 
 -   Clone the repository.
--   `npm install`
--   `npm start` do this using your command line.
+-   Run `npm install`
+-   Run `npm start` do these both using your command line.
 -   This automatically launches the web application in your default browser with url `localhost:3000`.
 
 ### Other Information
