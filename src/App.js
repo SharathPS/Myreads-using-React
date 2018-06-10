@@ -9,17 +9,24 @@ class BooksApp extends Component {
   state = {
     books:[]
   }
-  //This method is called after DOM elements are created.It will fetch all the initial books from API
-  componentDidMount() {
+  /*
+  * DOM elements are created once this method is being called.
+  * It fetchs all the inital books from the API
+  */
+    componentDidMount() {
     BooksAPI.getAll().then(books => this.setState({
       books
     }))
   }
-  //This function is called when the user changes the shelf of the book.This updates the shelf
+  /*
+  * Function to update shelf when user changes their shelf
+  */
   changeCategory = (ChangedBook,ChangeCategory) => {
     BooksAPI.update(ChangedBook,ChangeCategory).then(res=>{
       ChangedBook.shelf=ChangeCategory;
-      //NewBooks contain all the book except the book selected
+      /*
+      * NewBooks: Displays the list of books other than the selected books.
+      */
       let NewBooks = this.state.books.filter(book=> book.id!==ChangedBook.id)
       NewBooks.push(ChangedBook);
       this.setState({
