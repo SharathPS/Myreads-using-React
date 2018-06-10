@@ -31,10 +31,12 @@ class SearchPage extends Component {
 		return books
 
 	}
+
 	/*
 	*	 This function sets the query string passed to it.
 	*  Performs Searching and sets the state of the Books array to the newly searched array
 	*/
+	
 	searchBooks = (event)=>{
 		let q = event.target.value;
 		this.setState({
